@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4a2426" />
+  <meta name="description" content="ლუკა და მარიამის ქორწილის ციფრული მოსაწვევი" />
+  <title>ლუკა & მარიამი — ჩვენი დღე</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="site-shell">
+    <section id="invitation" class="screen hero-screen">
+      <div class="ornament">✦</div>
+      <p class="eyebrow">ჩვენი განსაკუთრებული დღე</p>
+      <h1>ლუკა <span>&amp;</span> მარიამი</h1>
+      <p class="headline">გეპატიჟებით ჩვენი ბედნიერების გასაზიარებლად და ერთად აღსანიშნად.</p>
+
+      <div class="date-card">
+        <span>შაბათი</span>
+        <strong>24</strong>
+        <span>ოქტომბერი · 2026</span>
+      </div>
+
+      <p class="location-summary">მცხეთა <span>•</span> ბაგინეთი</p>
+
+      <button class="primary-button" id="startButton" type="button">მოწვევის გაგრძელება <span>→</span></button>
+      <p class="small-note">ღონისძიება განკუთვნილია მხოლოდ 18+ სტუმრებისთვის</p>
+    </section>
+
+    <section id="guest-form" class="screen hidden">
+      <button class="back-button" id="backButton" type="button">← უკან</button>
+
+      <div class="section-heading">
+        <p class="eyebrow">სტუმრის დადასტურება</p>
+        <h2>მოგესალმებით</h2>
+        <p>გთხოვთ, მიუთითოთ თქვენი სახელი და გვარი.</p>
+      </div>
+
+      <form id="guestForm" novalidate>
+        <div class="field-row">
+          <label>სახელი
+            <input id="firstName" type="text" maxlength="80" autocomplete="given-name" placeholder="თქვენი სახელი" required />
+          </label>
+          <label>გვარი
+            <input id="lastName" type="text" maxlength="80" autocomplete="family-name" placeholder="თქვენი გვარი" required />
+          </label>
+        </div>
+
+        <div class="companion-box">
+          <div class="companion-title-row">
+            <div>
+              <p class="eyebrow">სურვილისამებრ</p>
+              <h3>მეუღლე / პარტნიორი</h3>
+            </div>
+            <span class="pill">არასავალდებულო</span>
+          </div>
+          <p>თუ მობრძანდებით მეუღლესთან ან პარტნიორთან ერთად, გთხოვთ, მიუთითოთ მისი სახელი და გვარი.</p>
+
+          <div class="field-row">
+            <label>სახელი
+              <input id="companionFirstName" type="text" maxlength="80" placeholder="სახელი" />
+            </label>
+            <label>გვარი
+              <input id="companionLastName" type="text" maxlength="80" placeholder="გვარი" />
+            </label>
+          </div>
+        </div>
+
+        <label class="consent-row">
+          <input id="adultConsent" type="checkbox" required />
+          <span>ვადასტურებ, რომ გავეცანი ღონისძიების 18+ ფორმატს.</span>
+        </label>
+
+        <p id="formError" class="form-error" role="alert"></p>
+        <button class="primary-button full" id="submitButton" type="submit">ჩემი დღის ნახვა <span>→</span></button>
+      </form>
+    </section>
+
+    <section id="agenda" class="screen hidden agenda-screen">
+      <div class="section-heading centered">
+        <p class="eyebrow">24 ოქტომბერი · მცხეთა</p>
+        <h2 id="welcomeTitle">მოგესალმებით</h2>
+        <p>გვიხარია, რომ ჩვენს განსაკუთრებულ დღეს ჩვენთან ერთად გაატარებთ.</p>
+      </div>
+
+      <div class="agenda-list">
+        <article class="agenda-item">
+          <time>16:00</time>
+          <div><h3>ჯვრისწერა</h3><p>სვეტიცხოვლის საპატრიარქო ტაძარი</p></div>
+        </article>
+        <article class="agenda-item">
+          <time>17:00</time>
+          <div><h3>წინასაქორწინო ცერემონია</h3><p>ბაგინეთი</p></div>
+        </article>
+        <article class="agenda-item">
+          <time>17:30</time>
+          <div>
+            <h3>ქორწილი</h3>
+            <p>ბაგინეთი · მცხეთა</p>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.839136,44.709323" target="_blank" rel="noopener noreferrer">ლოკაციის ნახვა ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <span class="detail-icon">✦</span>
+          <h3>ჩაცმის სტილი</h3>
+          <p>კლასიკური და ელეგანტური.</p>
+          <p>ქალბატონებს გთხოვთ, თეთრი ფერის კაბა პატარძალს დავუტოვოთ.</p>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon">18+</span>
+          <h3>მნიშვნელოვანი</h3>
+          <p>ჩვენი დღესასწაული განკუთვნილია მხოლოდ 18 წელს ზემოთ სტუმრებისთვის.</p>
+        </article>
+      </div>
+
+      <footer class="footer">ლუკა & მარიამი <span>♡</span> 24.10.2026</footer>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
