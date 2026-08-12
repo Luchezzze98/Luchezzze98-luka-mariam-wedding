@@ -1,4 +1,3 @@
-/opt/homebrew/Library/Homebrew/cmd/shellenv.sh: line 18: /bin/ps: Operation not permitted
 # ლუკა & მარიამი — Wedding Invitation
 
 Georgian-language digital wedding invitation built as a static GitHub Pages site with Supabase RSVP storage.

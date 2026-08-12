@@ -1,4 +1,3 @@
-/opt/homebrew/Library/Homebrew/cmd/shellenv.sh: line 18: /bin/ps: Operation not permitted
 // Supabase Dashboard -> Project Settings -> API
 // Use the Project URL and a publishable key (or legacy anon key).
 // Never put a service_role or secret key in frontend code.
