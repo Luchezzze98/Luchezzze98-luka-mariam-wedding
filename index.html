@@ -1,131 +1,310 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ka">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#4a2426" />
-  <meta name="description" content="ლუკა და მარიამის ქორწილის ციფრული მოსაწვევი" />
-  <title>ლუკა & მარიამი — ჩვენი დღე</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4b2427">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="ლუკა და მარიამის ქორწილის ციფრული მოსაწვევი — 24 ოქტომბერი, 2026, მცხეთა.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ka_GE">
+  <meta property="og:title" content="ლუკა &amp; მარიამი — ჩვენი დღე">
+  <meta property="og:description" content="გეპატიჟებით ჩვენი ბედნიერების გასაზიარებლად — 24 ოქტომბერი, 2026.">
+  <meta property="og:url" content="https://luchezzze98.github.io/Luchezzze98-luka-mariam-wedding/">
+  <meta name="twitter:card" content="summary">
+  <title>ლუკა &amp; მარიამი — ჩვენი დღე</title>
+
+  <link rel="canonical" href="https://luchezzze98.github.io/Luchezzze98-luka-mariam-wedding/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Noto+Sans+Georgian:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="site-shell">
-    <section id="invitation" class="screen hero-screen">
-      <div class="ornament">✦</div>
-      <p class="eyebrow">ჩვენი განსაკუთრებული დღე</p>
-      <h1>ლუკა <span>&amp;</span> მარიამი</h1>
-      <p class="headline">გეპატიჟებით ჩვენი ბედნიერების გასაზიარებლად და ერთად აღსანიშნად.</p>
+  <a class="skip-link" href="#main-content">მთავარ შინაარსზე გადასვლა</a>
 
-      <div class="date-card">
-        <span>შაბათი</span>
-        <strong>24</strong>
-        <span>ოქტომბერი · 2026</span>
+  <header class="site-header" id="siteHeader">
+    <a class="wordmark" href="#home" aria-label="ლუკა და მარიამი — მთავარი">
+      <span>ლ</span><i aria-hidden="true">&amp;</i><span>მ</span>
+    </a>
+    <nav class="desktop-nav" aria-label="მთავარი ნავიგაცია">
+      <a href="#story">ჩვენი დღე</a>
+      <a href="#schedule">განრიგი</a>
+      <a href="#locations">ლოკაციები</a>
+    </nav>
+    <a class="header-rsvp" href="#rsvp">დასწრების დადასტურება</a>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+      <div class="botanical botanical-left" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="botanical botanical-right" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
       </div>
 
-      <p class="location-summary">მცხეთა <span>•</span> ბაგინეთი</p>
+      <div class="hero-content reveal is-visible">
+        <p class="eyebrow">ჩვენი განსაკუთრებული დღე</p>
+        <h1 id="heroTitle">
+          <span>ლუკა</span>
+          <i>&amp;</i>
+          <span>მარიამი</span>
+        </h1>
+        <p class="hero-copy">გეპატიჟებით ჩვენი სიყვარულის ახალი თავის დასაწყისის ერთად აღსანიშნად.</p>
 
-      <button class="primary-button" id="startButton" type="button">მოწვევის გაგრძელება <span>→</span></button>
-      <p class="small-note">ღონისძიება განკუთვნილია მხოლოდ 18+ სტუმრებისთვის</p>
-    </section>
-
-    <section id="guest-form" class="screen hidden">
-      <button class="back-button" id="backButton" type="button">← უკან</button>
-
-      <div class="section-heading">
-        <p class="eyebrow">სტუმრის დადასტურება</p>
-        <h2>მოგესალმებით</h2>
-        <p>გთხოვთ, მიუთითოთ თქვენი სახელი და გვარი.</p>
-      </div>
-
-      <form id="guestForm" novalidate>
-        <div class="field-row">
-          <label>სახელი
-            <input id="firstName" type="text" maxlength="80" autocomplete="given-name" placeholder="თქვენი სახელი" required />
-          </label>
-          <label>გვარი
-            <input id="lastName" type="text" maxlength="80" autocomplete="family-name" placeholder="თქვენი გვარი" required />
-          </label>
+        <div class="hero-date" aria-label="შაბათი, 24 ოქტომბერი, 2026">
+          <span>შაბათი</span>
+          <strong>24</strong>
+          <span>ოქტომბერი · 2026</span>
         </div>
 
-        <div class="companion-box">
-          <div class="companion-title-row">
-            <div>
-              <p class="eyebrow">სურვილისამებრ</p>
-              <h3>მეუღლე / პარტნიორი</h3>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#rsvp">დასწრების დადასტურება <span aria-hidden="true">→</span></a>
+          <a class="button button-quiet" href="#schedule">დღის ნახვა <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="age-note"><span aria-hidden="true">18+</span> ღონისძიება განკუთვნილია სრულწლოვანი სტუმრებისთვის</p>
+      </div>
+
+      <a class="scroll-cue" href="#story" aria-label="ქვემოთ გადასვლა">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="countdown-section" aria-labelledby="countdownTitle">
+      <div class="section-shell countdown-shell reveal">
+        <div>
+          <p class="eyebrow">24 ოქტომბრამდე</p>
+          <h2 id="countdownTitle">ერთად დავითვალოთ</h2>
+        </div>
+        <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="ქორწილამდე დარჩენილი დრო">
+          <div><strong id="countdownDays">—</strong><span>დღე</span></div>
+          <div><strong id="countdownHours">—</strong><span>საათი</span></div>
+          <div><strong id="countdownMinutes">—</strong><span>წუთი</span></div>
+          <div><strong id="countdownSeconds">—</strong><span>წამი</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section section-pad" id="story" aria-labelledby="storyTitle">
+      <div class="section-shell story-layout">
+        <div class="story-mark reveal" aria-hidden="true">
+          <span>ლ</span><i>&amp;</i><span>მ</span>
+          <small>24 · 10 · 26</small>
+        </div>
+        <div class="story-copy reveal">
+          <p class="eyebrow">ჩვენი დღე</p>
+          <h2 id="storyTitle">სიყვარული, ოჯახი და დაუვიწყარი მოგონებები</h2>
+          <p>ჩვენთვის ყველაზე ძვირფასია, ეს დღე საყვარელ ადამიანებთან ერთად გავატაროთ. გელოდებით მცხეთაში — ქალაქში, სადაც ტრადიცია, ისტორია და ჩვენი ახალი დასაწყისი ერთმანეთს ხვდება.</p>
+          <blockquote>„საუკეთესო მოგონებები იქმნება მაშინ, როცა მათ ერთად ვქმნით.“</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule-section section-pad" id="schedule" aria-labelledby="scheduleTitle">
+      <div class="section-shell">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">24 ოქტომბერი · მცხეთა</p>
+          <h2 id="scheduleTitle">დღის განრიგი</h2>
+          <p>ყველაფერი, რაც ჩვენი დღის მშვიდად დაგეგმვაში დაგეხმარებათ.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <time datetime="2026-10-24T16:00:00+04:00">16:00</time>
+            <div class="timeline-dot" aria-hidden="true"><span>01</span></div>
+            <div class="timeline-card">
+              <p class="eyebrow">პირველი გაჩერება</p>
+              <h3>ჯვრისწერა</h3>
+              <p>სვეტიცხოვლის საპატრიარქო ტაძარი</p>
             </div>
-            <span class="pill">არასავალდებულო</span>
-          </div>
-          <p>თუ მობრძანდებით მეუღლესთან ან პარტნიორთან ერთად, გთხოვთ, მიუთითოთ მისი სახელი და გვარი.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <time datetime="2026-10-24T17:00:00+04:00">17:00</time>
+            <div class="timeline-dot" aria-hidden="true"><span>02</span></div>
+            <div class="timeline-card">
+              <p class="eyebrow">შეხვედრა</p>
+              <h3>წინასაქორწინო ცერემონია</h3>
+              <p>ბაგინეთი · მცხეთა</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time datetime="2026-10-24T17:30:00+04:00">17:30</time>
+            <div class="timeline-dot" aria-hidden="true"><span>03</span></div>
+            <div class="timeline-card">
+              <p class="eyebrow">დღესასწაული</p>
+              <h3>ქორწილი</h3>
+              <p>ვახშამი, მუსიკა და საღამო თქვენთან ერთად — ბაგინეთში.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <div class="field-row">
-            <label>სახელი
-              <input id="companionFirstName" type="text" maxlength="80" placeholder="სახელი" />
-            </label>
-            <label>გვარი
-              <input id="companionLastName" type="text" maxlength="80" placeholder="გვარი" />
-            </label>
+    <section class="locations-section section-pad" id="locations" aria-labelledby="locationsTitle">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">გზამკვლევი</p>
+          <h2 id="locationsTitle">ლოკაციები</h2>
+          <p>გახსენით რუკა და შეინახეთ მარშრუტი წინასწარ.</p>
+        </div>
+
+        <div class="location-grid">
+          <article class="location-card location-church reveal">
+            <div class="location-number">01</div>
+            <div>
+              <p class="eyebrow">16:00 · ჯვრისწერა</p>
+              <h3>სვეტიცხოველი</h3>
+              <p>სვეტიცხოვლის საპატრიარქო ტაძარი, მცხეთა</p>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Svetitskhoveli+Cathedral" target="_blank" rel="noopener noreferrer">Google Maps <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="location-card location-reception reveal">
+            <div class="location-number">02</div>
+            <div>
+              <p class="eyebrow">17:00 · მიღება</p>
+              <h3>ბაგინეთი</h3>
+              <p>მცხეთა · 41.839136, 44.709323</p>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=41.839136,44.709323" target="_blank" rel="noopener noreferrer">Google Maps <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="details-section section-pad" aria-labelledby="detailsTitle">
+      <div class="section-shell">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">სასარგებლო დეტალები</p>
+          <h2 id="detailsTitle">სანამ შევხვდებით</h2>
+        </div>
+        <div class="details-grid">
+          <article class="detail-card reveal">
+            <span class="detail-icon" aria-hidden="true">✦</span>
+            <h3>ჩაცმის სტილი</h3>
+            <p>კლასიკური და ელეგანტური. ქალბატონებს გთხოვთ, თეთრი ფერის კაბა პატარძალს დავუტოვოთ.</p>
+          </article>
+          <article class="detail-card reveal">
+            <span class="detail-icon detail-icon-text" aria-hidden="true">18+</span>
+            <h3>მხოლოდ უფროსებისთვის</h3>
+            <p>ჩვენი დღესასწაული განკუთვნილია მხოლოდ 18 წელს ზემოთ სტუმრებისთვის.</p>
+          </article>
+          <article class="detail-card reveal">
+            <span class="detail-icon" aria-hidden="true">◷</span>
+            <h3>დროულად მობრძანდით</h3>
+            <p>გთხოვთ, ჯვრისწერის დაწყებამდე 15 წუთით ადრე მობრძანდეთ.</p>
+          </article>
+        </div>
+        <div class="calendar-actions reveal">
+          <button class="button button-primary" id="downloadCalendar" type="button">კალენდარში შენახვა <span aria-hidden="true">↓</span></button>
+          <a class="button button-quiet" id="googleCalendar" href="#" target="_blank" rel="noopener noreferrer">Google Calendar <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp-section section-pad" id="rsvp" aria-labelledby="rsvpTitle">
+      <div class="section-shell rsvp-layout">
+        <div class="rsvp-intro reveal">
+          <p class="eyebrow">R.S.V.P.</p>
+          <h2 id="rsvpTitle">იქნებით ჩვენთან?</h2>
+          <p>გთხოვთ, დაგვიდასტუროთ თქვენი პასუხი. თქვენი ინფორმაცია მხოლოდ სტუმრების სიის ორგანიზებისთვის გამოიყენება.</p>
+          <div class="rsvp-date-mark" aria-hidden="true">
+            <strong>24</strong>
+            <span>ოქტომბერი<br>2026</span>
           </div>
         </div>
 
-        <label class="consent-row">
-          <input id="adultConsent" type="checkbox" required />
-          <span>ვადასტურებ, რომ გავეცანი ღონისძიების 18+ ფორმატს.</span>
-        </label>
+        <div class="form-card reveal">
+          <form id="guestForm" novalidate>
+            <fieldset class="attendance-fieldset">
+              <legend>შეძლებთ დასწრებას?</legend>
+              <div class="choice-grid">
+                <label class="choice-card">
+                  <input type="radio" name="attendance" value="attending" checked>
+                  <span><b>დიახ, მოვდივარ</b><small>სიხარულით ვიქნები თქვენთან</small></span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="attendance" value="not_attending">
+                  <span><b>ვერ მოვდივარ</b><small>სამწუხაროდ, ვერ დაგესწრებით</small></span>
+                </label>
+              </div>
+            </fieldset>
 
-        <p id="formError" class="form-error" role="alert"></p>
-        <button class="primary-button full" id="submitButton" type="submit">ჩემი დღის ნახვა <span>→</span></button>
-      </form>
-    </section>
+            <div class="form-grid">
+              <label for="firstName">სახელი
+                <input id="firstName" name="firstName" type="text" maxlength="80" autocomplete="given-name" placeholder="თქვენი სახელი" required>
+              </label>
+              <label for="lastName">გვარი
+                <input id="lastName" name="lastName" type="text" maxlength="80" autocomplete="family-name" placeholder="თქვენი გვარი" required>
+              </label>
+            </div>
 
-    <section id="agenda" class="screen hidden agenda-screen">
-      <div class="section-heading centered">
-        <p class="eyebrow">24 ოქტომბერი · მცხეთა</p>
-        <h2 id="welcomeTitle">მოგესალმებით</h2>
-        <p>გვიხარია, რომ ჩვენს განსაკუთრებულ დღეს ჩვენთან ერთად გაატარებთ.</p>
-      </div>
+            <div id="attendingDetails">
+              <label class="toggle-row" for="hasCompanion">
+                <span><b>მეუღლე / პარტნიორი</b><small>მონიშნეთ, თუ ერთად მობრძანდებით</small></span>
+                <input id="hasCompanion" name="hasCompanion" type="checkbox" role="switch" aria-controls="companionFields" aria-expanded="false">
+              </label>
 
-      <div class="agenda-list">
-        <article class="agenda-item">
-          <time>16:00</time>
-          <div><h3>ჯვრისწერა</h3><p>სვეტიცხოვლის საპატრიარქო ტაძარი</p></div>
-        </article>
-        <article class="agenda-item">
-          <time>17:00</time>
-          <div><h3>წინასაქორწინო ცერემონია</h3><p>ბაგინეთი</p></div>
-        </article>
-        <article class="agenda-item">
-          <time>17:30</time>
-          <div>
-            <h3>ქორწილი</h3>
-            <p>ბაგინეთი · მცხეთა</p>
-            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.839136,44.709323" target="_blank" rel="noopener noreferrer">ლოკაციის ნახვა ↗</a>
+              <div class="companion-fields" id="companionFields" hidden>
+                <div class="form-grid">
+                  <label for="companionFirstName">თანმხლების სახელი
+                    <input id="companionFirstName" name="companionFirstName" type="text" maxlength="80" autocomplete="off" placeholder="სახელი">
+                  </label>
+                  <label for="companionLastName">თანმხლების გვარი
+                    <input id="companionLastName" name="companionLastName" type="text" maxlength="80" autocomplete="off" placeholder="გვარი">
+                  </label>
+                </div>
+              </div>
+
+              <label for="dietaryNotes">კვებასთან დაკავშირებული შენიშვნა <span class="optional">სურვილისამებრ</span>
+                <textarea id="dietaryNotes" name="dietaryNotes" maxlength="300" rows="3" placeholder="მაგალითად: ალერგია ან ვეგეტარიანული მენიუ"></textarea>
+              </label>
+            </div>
+
+            <label class="consent-row" id="adultConsentRow" for="adultConsent">
+              <input id="adultConsent" name="adultConsent" type="checkbox" required>
+              <span>ვადასტურებ, რომ გავეცანი ღონისძიების 18+ ფორმატს.</span>
+            </label>
+
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="form-status" id="formStatus" role="alert" aria-live="assertive"></p>
+            <button class="button button-primary submit-button" id="submitButton" type="submit">
+              <span class="button-label">პასუხის გაგზავნა</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <div class="success-panel" id="successPanel" role="status" tabindex="-1" hidden>
+            <span class="success-icon" aria-hidden="true">✓</span>
+            <p class="eyebrow">პასუხი მიღებულია</p>
+            <h3 id="successTitle">დიდი მადლობა</h3>
+            <p id="successMessage">თქვენი პასუხი წარმატებით შევინახეთ.</p>
+            <button class="text-button" id="editResponse" type="button">პასუხის შეცვლა</button>
           </div>
-        </article>
+        </div>
       </div>
-
-      <div class="details-grid">
-        <article class="detail-card">
-          <span class="detail-icon">✦</span>
-          <h3>ჩაცმის სტილი</h3>
-          <p>კლასიკური და ელეგანტური.</p>
-          <p>ქალბატონებს გთხოვთ, თეთრი ფერის კაბა პატარძალს დავუტოვოთ.</p>
-        </article>
-        <article class="detail-card">
-          <span class="detail-icon">18+</span>
-          <h3>მნიშვნელოვანი</h3>
-          <p>ჩვენი დღესასწაული განკუთვნილია მხოლოდ 18 წელს ზემოთ სტუმრებისთვის.</p>
-        </article>
-      </div>
-
-      <footer class="footer">ლუკა & მარიამი <span>♡</span> 24.10.2026</footer>
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="config.js"></script>
-<script src="app.js"></script>
+  <footer class="site-footer">
+    <div class="footer-monogram" aria-hidden="true">ლ <i>&amp;</i> მ</div>
+    <p>სიყვარულით გელოდებით</p>
+    <small>24 · 10 · 2026</small>
+  </footer>
+
+  <noscript>
+    <div class="noscript-message">დასწრების დასადასტურებლად გთხოვთ, ჩართოთ JavaScript.</div>
+  </noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
