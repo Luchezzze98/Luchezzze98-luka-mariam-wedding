@@ -1,74 +1,72 @@
+/opt/homebrew/Library/Homebrew/cmd/shellenv.sh: line 18: /bin/ps: Operation not permitted
 # ლუკა & მარიამი — Wedding Invitation
 
-Georgian-language digital wedding invitation built as a static GitHub Pages site with Supabase guest submission storage.
+Georgian-language digital wedding invitation built as a static GitHub Pages site with Supabase RSVP storage.
+
+## Highlights
+
+- responsive, accessible single-page invitation
+- live wedding countdown and calendar download
+- schedule, venue details, and Google Maps links
+- attendance, companion, and dietary-note RSVP fields
+- subtle reveal animations with reduced-motion support
+- Supabase row-level security with anonymous insert-only access
 
 ## Files
 
-- `index.html` — invitation, guest form, agenda
-- `css/styles.css` — Georgian/autumn styling
-- `js/config.js` — Supabase public configuration
-- `js/app.js` — UI + submission logic
-- `supabase/schema.sql` — database table + RLS policy
+- `index.html` — invitation content, schedule, locations, and RSVP form
+- `styles.css` — design system, layouts, components, and responsive styling
+- `config.js` — Supabase public configuration
+- `app.js` — countdown, calendar, UI, validation, and submission logic
+- `favicon.svg` — browser icon
+- `schema.sql` — database table, migration, indexes, and RLS policy
 
 ## Supabase setup
 
 1. Create a Supabase project.
-2. Go to **SQL Editor**.
-3. Paste and run `supabase/schema.sql`.
-4. Go to **Project Settings -> API**.
+2. Open **SQL Editor**.
+3. Paste and run `schema.sql`. It is safe to run for both a new project and a project using the original schema.
+4. Open **Project Settings → API**.
 5. Copy the Project URL and publishable key (or legacy anon key).
-6. Paste both into `js/config.js`.
+6. Paste both into `config.js`.
 
-Never put a `service_role` or secret key in frontend code.
+Never put a `service_role` or secret key in frontend code. A publishable or anonymous key is expected to be visible in browser source.
 
-The SQL intentionally grants anonymous users INSERT only. No public SELECT policy is created, so website visitors cannot fetch the guest list.
+The SQL grants anonymous users `INSERT` only. No public `SELECT` policy is created, so website visitors cannot retrieve the guest list.
 
 ## Local test
 
 From the project directory:
 
 ```bash
-python -m http.server 8000
+python3 -m http.server 8000
 ```
 
 Open `http://localhost:8000`.
 
-## Push to GitHub
+## Deploy with GitHub Pages
 
-Create an empty repository, e.g. `luka-mariam-wedding`, then:
+In the repository settings:
 
-```bash
-git init
-git add .
-git commit -m "Create wedding invitation"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/luka-mariam-wedding.git
-git push -u origin main
-```
+1. Open **Pages**.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Choose branch `main` and folder `/ (root)`.
+4. Save.
 
-## Enable GitHub Pages
+The production URL is:
 
-In GitHub:
-
-1. Open repository **Settings**.
-2. Open **Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Choose branch `main` and folder `/ (root)`.
-5. Save.
-
-Your URL will normally be:
-
-`https://YOUR_USERNAME.github.io/luka-mariam-wedding/`
+`https://luchezzze98.github.io/Luchezzze98-luka-mariam-wedding/`
 
 ## Guest data
 
-In Supabase, open **Table Editor -> guest_submissions** to view submissions.
+In Supabase, open **Table Editor → guest_submissions**. Stored fields are:
 
-Fields:
-- first_name
-- last_name
-- companion_first_name
-- companion_last_name
-- created_at
+- `attendance_status`
+- `first_name`
+- `last_name`
+- `companion_first_name`
+- `companion_last_name`
+- `dietary_notes`
+- `created_at`
 
-Names are stored exactly as guests enter them; there is no Excel list or spelling validation.
+Before deploying this version, run the latest `schema.sql` once so the new RSVP columns exist.
