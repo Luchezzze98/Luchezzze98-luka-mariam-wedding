@@ -1015,7 +1015,13 @@ legend,
   gap: 8px;
 }
 
+.guest-preferences {
+  display: grid;
+  gap: 20px;
+}
+
 input[type="text"],
+input[type="tel"],
 textarea {
   width: 100%;
   border: 1px solid var(--line);
@@ -1026,7 +1032,8 @@ textarea {
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="tel"] {
   min-height: 54px;
   padding: 0 16px;
 }
@@ -1038,6 +1045,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="tel"]:focus,
 textarea:focus {
   border-color: var(--terracotta);
   box-shadow: 0 0 0 4px rgb(164 98 77 / 10%);

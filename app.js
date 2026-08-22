@@ -26,7 +26,10 @@ const UI = {
   companionFields: document.getElementById("companionFields"),
   companionFirstName: document.getElementById("companionFirstName"),
   companionLastName: document.getElementById("companionLastName"),
-  dietaryNotes: document.getElementById("dietaryNotes"),
+  seatingPreferences: document.getElementById("seatingPreferences"),
+  messageToCouple: document.getElementById("messageToCouple"),
+  songRequest: document.getElementById("songRequest"),
+  phoneNumber: document.getElementById("phoneNumber"),
   adultConsent: document.getElementById("adultConsent"),
   adultConsentRow: document.getElementById("adultConsentRow"),
   website: document.getElementById("website"),
@@ -167,11 +170,16 @@ function setAttendanceVisibility() {
   UI.attendingDetails.hidden = !attending;
   UI.adultConsentRow.hidden = !attending;
   UI.adultConsent.required = attending;
+  UI.phoneNumber.required = attending;
 
   if (!attending) {
     UI.hasCompanion.checked = false;
     setCompanionVisibility(false);
-    UI.dietaryNotes.value = "";
+    UI.seatingPreferences.value = "";
+    UI.messageToCouple.value = "";
+    UI.songRequest.value = "";
+    UI.phoneNumber.value = "";
+    clearInvalidState(UI.phoneNumber);
     UI.adultConsent.checked = false;
     clearInvalidState(UI.adultConsent);
   }
@@ -188,7 +196,7 @@ function markInvalid(field, message) {
 }
 
 function validateForm() {
-  const fields = [UI.firstName, UI.lastName, UI.companionFirstName, UI.companionLastName, UI.adultConsent];
+  const fields = [UI.firstName, UI.lastName, UI.companionFirstName, UI.companionLastName, UI.phoneNumber, UI.adultConsent];
   fields.forEach(clearInvalidState);
 
   if (!clean(UI.firstName.value)) markInvalid(UI.firstName, "გთხოვთ, მიუთითოთ თქვენი სახელი.");
@@ -200,6 +208,17 @@ function validateForm() {
     }
     if (!clean(UI.companionLastName.value)) {
       markInvalid(UI.companionLastName, "გთხოვთ, მიუთითოთ თანმხლების გვარი.");
+    }
+  }
+
+  if (getAttendance() === "attending") {
+    const phoneNumber = clean(UI.phoneNumber.value);
+    const phoneDigits = phoneNumber.replace(/\D/g, "");
+
+    if (!phoneNumber) {
+      markInvalid(UI.phoneNumber, "გთხოვთ, მიუთითოთ თქვენი ტელეფონის ნომერი.");
+    } else if (!/^\+?[\d\s()-]+$/.test(phoneNumber) || phoneDigits.length < 7 || phoneDigits.length > 15) {
+      markInvalid(UI.phoneNumber, "გთხოვთ, მიუთითოთ სწორი ტელეფონის ნომერი.");
     }
   }
 
@@ -229,7 +248,10 @@ function readFormData() {
     lastName: clean(UI.lastName.value),
     companionFirstName: includesCompanion ? clean(UI.companionFirstName.value) : "",
     companionLastName: includesCompanion ? clean(UI.companionLastName.value) : "",
-    dietaryNotes: attendanceStatus === "attending" ? clean(UI.dietaryNotes.value) : ""
+    seatingPreferences: attendanceStatus === "attending" ? clean(UI.seatingPreferences.value) : "",
+    messageToCouple: attendanceStatus === "attending" ? clean(UI.messageToCouple.value) : "",
+    songRequest: attendanceStatus === "attending" ? clean(UI.songRequest.value) : "",
+    phoneNumber: attendanceStatus === "attending" ? clean(UI.phoneNumber.value) : ""
   };
 }
 
@@ -265,7 +287,10 @@ async function saveGuest(data) {
         last_name: data.lastName,
         companion_first_name: data.companionFirstName || null,
         companion_last_name: data.companionLastName || null,
-        dietary_notes: data.dietaryNotes || null
+        seating_preferences: data.seatingPreferences || null,
+        message_to_couple: data.messageToCouple || null,
+        song_request: data.songRequest || null,
+        phone_number: data.phoneNumber || null
       })
       .abortSignal(controller.signal);
 

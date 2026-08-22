@@ -5,14 +5,26 @@ create table if not exists public.guest_submissions (
   last_name text not null,
   companion_first_name text,
   companion_last_name text,
-  dietary_notes text,
+  seating_preferences text,
+  message_to_couple text,
+  song_request text,
+  phone_number text,
   created_at timestamptz not null default now()
 );
 
--- Safe migration for projects created with the first version of this site.
+-- Safe migration for projects created with an earlier version of this site.
 alter table public.guest_submissions
   add column if not exists attendance_status text not null default 'attending',
-  add column if not exists dietary_notes text;
+  add column if not exists seating_preferences text,
+  add column if not exists message_to_couple text,
+  add column if not exists song_request text,
+  add column if not exists phone_number text;
+
+-- Remove the obsolete dietary field after removing the legacy policy that referenced it.
+drop policy if exists "public can submit guest information" on public.guest_submissions;
+
+alter table public.guest_submissions
+  drop column if exists dietary_notes;
 
 alter table public.guest_submissions
   drop constraint if exists guest_submissions_attendance_status_check;
@@ -25,8 +37,6 @@ alter table public.guest_submissions enable row level security;
 
 revoke all on table public.guest_submissions from anon;
 grant insert on table public.guest_submissions to anon;
-
-drop policy if exists "public can submit guest information" on public.guest_submissions;
 
 create policy "public can submit guest information"
 on public.guest_submissions
@@ -46,7 +56,29 @@ with check (
       )
     )
   )
-  and (dietary_notes is null or char_length(trim(dietary_notes)) between 1 and 300)
+  and (
+    attendance_status = 'not_attending'
+    or (
+      phone_number is not null
+      and char_length(trim(phone_number)) between 7 and 30
+    )
+  )
+  and (
+    seating_preferences is null
+    or char_length(trim(seating_preferences)) between 1 and 160
+  )
+  and (
+    message_to_couple is null
+    or char_length(trim(message_to_couple)) between 1 and 500
+  )
+  and (
+    song_request is null
+    or char_length(trim(song_request)) between 1 and 160
+  )
+  and (
+    phone_number is null
+    or char_length(trim(phone_number)) between 7 and 30
+  )
 );
 
 create index if not exists guest_submissions_created_at_idx

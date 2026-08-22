@@ -259,9 +259,23 @@
                 </div>
               </div>
 
-              <label for="dietaryNotes">კვებასთან დაკავშირებული შენიშვნა <span class="optional">სურვილისამებრ</span>
-                <textarea id="dietaryNotes" name="dietaryNotes" maxlength="300" rows="3" placeholder="მაგალითად: ალერგია ან ვეგეტარიანული მენიუ"></textarea>
-              </label>
+              <div class="guest-preferences">
+                <label for="seatingPreferences">ვისთან ერთად გსურთ მაგიდასთან დაჯდომა? <span class="optional">სურვილისამებრ</span>
+                  <input id="seatingPreferences" name="seatingPreferences" type="text" maxlength="160" autocomplete="off" placeholder="მაგალითად: ნინო, გიორგი და მეგობრები">
+                </label>
+
+                <label for="messageToCouple">დაგვიტოვეთ სურვილი ან თბილი სიტყვები <span class="optional">სურვილისამებრ</span>
+                  <textarea id="messageToCouple" name="messageToCouple" maxlength="500" rows="3" placeholder="თქვენი სურვილი ან თბილი სიტყვები..."></textarea>
+                </label>
+
+                <label for="songRequest">რომელი სიმღერის მოსმენა გაგიხარდებოდათ? <span class="optional">სურვილისამებრ</span>
+                  <input id="songRequest" name="songRequest" type="text" maxlength="160" autocomplete="off" placeholder="შემსრულებელი — სიმღერის სახელწოდება">
+                </label>
+
+                <label for="phoneNumber">დაგვიტოვეთ ტელეფონის ნომერი
+                  <input id="phoneNumber" name="phoneNumber" type="tel" maxlength="30" inputmode="tel" autocomplete="tel" placeholder="+995 5XX XX XX XX" required>
+                </label>
+              </div>
             </div>
 
             <label class="consent-row" id="adultConsentRow" for="adultConsent">

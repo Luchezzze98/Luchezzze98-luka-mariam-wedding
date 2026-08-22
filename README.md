@@ -7,7 +7,7 @@ Georgian-language digital wedding invitation built as a static GitHub Pages site
 - responsive, accessible single-page invitation
 - live wedding countdown and calendar download
 - schedule, venue details, and Google Maps links
-- attendance, companion, and dietary-note RSVP fields
+- attendance, companion, phone, seating preference, personal-message, and song-request RSVP fields
 - subtle reveal animations with reduced-motion support
 - Supabase row-level security with anonymous insert-only access
 
@@ -65,7 +65,10 @@ In Supabase, open **Table Editor → guest_submissions**. Stored fields are:
 - `last_name`
 - `companion_first_name`
 - `companion_last_name`
-- `dietary_notes`
+- `seating_preferences`
+- `message_to_couple`
+- `song_request`
+- `phone_number`
 - `created_at`
 
 Before deploying this version, run the latest `schema.sql` once so the new RSVP columns exist.
