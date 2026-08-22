@@ -756,9 +756,9 @@ p {
 }
 
 .location-reception::before {
-  background:
-    radial-gradient(circle at 24% 18%, rgb(181 140 88 / 48%), transparent 18%),
-    linear-gradient(145deg, #9c654f, #3a2024 72%);
+  inset: -12px;
+  background: url("assets/bagineti-restaurant.webp") center 42% / cover no-repeat;
+  filter: blur(3px);
 }
 
 .location-card::before {
